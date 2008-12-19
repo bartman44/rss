@@ -1,0 +1,7 @@
+<%form_for :rss, :url=>"/admin/rss/update?id=#{params[:id]}" do |form|%>
+<table>
+	<tr><th>name</th><td> <%=form.text_field :name%> </td></tr>
+	<tr><th>url</th><td> <%=form.text_field :url%> </td></tr>
+</table>
+<%=form.submit "Save" %>
+<%end%>

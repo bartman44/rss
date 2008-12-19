@@ -1,0 +1,21 @@
+<%if @rsses%>
+	<table id = "index">
+	<tr><th>Name</th>
+	<th>Url</th>
+	<th>Modify</th>
+	<th>Delete</th>
+	</tr>
+	<%for rss in @rsses%>
+		<tr>
+			<td><%=rss.name%></td>
+			<td><%=rss.url%></td>
+			<td><%=link_to_remote "Edit", :url=>"/admin/rss/edit?id=#{rss.id}" , :update=>"form" %></td>
+			<td><%=link_to "Delete", "/admin/rss/destroy?id=#{rss.id}" %></td>
+		</tr>
+	<%end%>
+	</table>
+<%end%>
+<%=link_to_remote "New RSS", :url=>"/admin/rss/new" , :update=>"form" %>
+
+<div id="form">
+</div>
